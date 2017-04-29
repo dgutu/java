@@ -1,0 +1,18 @@
+18:42:55.692 [] ERROR c.p.i.s.netforum.NetforumService - Unable to retrieve Netforum security service's JNDI initialization parameters
+javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
+	at javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:645) ~[na:1.6.0_38]
+	at javax.naming.InitialContext.getDefaultInitCtx(InitialContext.java:288) ~[na:1.6.0_38]
+	at javax.naming.InitialContext.getURLOrDefaultInitCtx(InitialContext.java:325) ~[na:1.6.0_38]
+	at javax.naming.InitialContext.lookup(InitialContext.java:392) ~[na:1.6.0_38]
+	at com.proximo.inci.service.netforum.NetforumService.<clinit>(NetforumService.java:62) ~[classes/:na]
+	at com.proximo.inci.service.security.SecurityService.findUsers(SecurityService.java:78) [classes/:na]
+	at com.proximo.inci.resource.CaptionResolverTest.main(CaptionResolverTest.java:28) [test-classes/:na]
+18:43:47.098 [] ERROR c.p.i.s.netforum.NetforumService - Unable to retrieve Netforum security service's JNDI initialization parameters
+javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
+	at javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:645) ~[na:1.6.0_38]
+	at javax.naming.InitialContext.getDefaultInitCtx(InitialContext.java:288) ~[na:1.6.0_38]
+	at javax.naming.InitialContext.getURLOrDefaultInitCtx(InitialContext.java:325) ~[na:1.6.0_38]
+	at javax.naming.InitialContext.lookup(InitialContext.java:392) ~[na:1.6.0_38]
+	at com.proximo.inci.service.netforum.NetforumService.<clinit>(NetforumService.java:62) ~[classes/:na]
+	at com.proximo.inci.service.security.SecurityService.findUsers(SecurityService.java:78) [classes/:na]
+	at com.proximo.inci.resource.CaptionResolverTest.main(CaptionResolverTest.java:28) [test-classes/:na]

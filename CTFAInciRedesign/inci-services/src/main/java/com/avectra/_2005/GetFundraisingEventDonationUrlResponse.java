@@ -1,0 +1,64 @@
+
+package com.avectra._2005;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for anonymous complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType>
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="GetFundraisingEventDonationUrlResult" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "getFundraisingEventDonationUrlResult"
+})
+@XmlRootElement(name = "GetFundraisingEventDonationUrlResponse")
+public class GetFundraisingEventDonationUrlResponse {
+
+    @XmlElement(name = "GetFundraisingEventDonationUrlResult")
+    protected String getFundraisingEventDonationUrlResult;
+
+    /**
+     * Gets the value of the getFundraisingEventDonationUrlResult property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getGetFundraisingEventDonationUrlResult() {
+        return getFundraisingEventDonationUrlResult;
+    }
+
+    /**
+     * Sets the value of the getFundraisingEventDonationUrlResult property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setGetFundraisingEventDonationUrlResult(String value) {
+        this.getFundraisingEventDonationUrlResult = value;
+    }
+
+}

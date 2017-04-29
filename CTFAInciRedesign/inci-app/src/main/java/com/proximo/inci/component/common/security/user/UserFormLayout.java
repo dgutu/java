@@ -1,0 +1,65 @@
+/** Copyright 2012 to present by the Personal Care Products Council, Inc
+The copyright to the computer program(s) herein is the property of 
+the Personal Care Products Council, Inc. The program(s) may be used and/or
+copied only with the written permission of the Personal Care Products Council, Inc
+or in accordance with the terms and conditions stipulated in the
+agreement/contract under which the program(s) have been supplied.*/
+
+package com.proximo.inci.component.common.security.user;
+
+import com.proximo.inci.component.AbstractInciComponentLayout;
+import com.proximo.inci.component.util.ComponentUtil;
+import com.proximo.inci.service.security.user.User;
+import com.vaadin.ui.Alignment;
+import com.vaadin.ui.VerticalLayout;
+
+public class UserFormLayout extends AbstractInciComponentLayout<VerticalLayout> {
+
+    private User user;
+
+    private boolean editable = true;
+
+    private UserFormTitleLayout userFormTitleLayout;
+    private UserForm userForm;
+
+    public UserFormLayout() {
+        build();
+    }
+
+    @Override
+    protected VerticalLayout createMainComponentInstance() {
+        return new VerticalLayout();
+    }
+
+    @Override
+    protected void init() {
+        mainComponent.setSpacing(false);
+
+        userFormTitleLayout = new UserFormTitleLayout();
+        userForm = new UserForm(this);
+    }
+
+    @Override
+    protected void addContent() {
+        addComponent(userFormTitleLayout, Alignment.MIDDLE_CENTER);
+        addSpacing(ComponentUtil.NORMAL_FORM_SPACING_PX);
+        addComponent(userForm);
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public boolean isEditable() {
+        return editable;
+    }
+
+    public void setEditable(boolean editable) {
+        this.editable = editable;
+    }
+
+}

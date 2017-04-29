@@ -1,0 +1,646 @@
+@import url(../reindeer/styles.css);
+
+/*** Application ***/
+.v-loading-indicator,
+.v-loading-indicator-delay,
+.v-loading-indicator-wait {
+	position: fixed !important;
+	
+	top: 0;
+	left: 0;
+	
+	width: 100%;
+	height: 100%;
+	  
+    background-position: 50%;
+	background-color: #CCCCCC;    
+	  
+	background-image: url("../base/common/img/loading-indicator.gif");
+	
+	opacity: .5;
+	filter: alpha(opacity=50);
+	-ms-filter: alpha(opacity=50);
+	
+	background-repeat: no-repeat;
+}
+
+/*** Top template ***/
+.top-bkg-1 {
+    background-image: url('images/sliver_utility.gif');
+}
+
+.small-brand-info {
+    font-size: 10px;
+    line-height: normal;
+    color: white;
+}
+
+.login-info {
+    font-size: 10px;
+    line-height: normal;
+}
+
+.top-bkg-3 {
+    background-image: url('images/sliver_search.gif');  
+}
+
+.copyright-info a {
+    font-size: 10px;
+    line-height: normal;
+}
+
+/*** Bottom template ***/
+
+.bottom-bkg-1 {
+    background-image: url('images/body_bg_r3_c1.jpg');
+}
+
+.bottom-bkg-2 {
+	background-image: url('images/body_r3_c4.jpg');
+}
+
+.bottom-info {
+    font-size: 10px;
+    line-height: normal;
+}
+
+.bottom-info a:link span {
+    font-size: 10px;
+    font-weight: bold;
+    line-height: normal;
+    color: red;
+}
+
+.bottom-info a:visited span {
+    color: red;
+}
+
+/*** Windows ***/
+.inci-sub-window .v-window-outerheader {
+	background: #9999cc;
+}
+
+/*** Menu ***/
+.v-menubar {
+    background-image: url('images/nav_space.gif');
+    padding: 0;
+    color: #990066;
+}
+
+.v-menubar-menuitem {
+    background-image: url('images/nav_space.gif');
+    text-shadow: none;
+}
+
+.v-menubar .v-menubar-menuitem:hover {
+    /*color: #4169E1;*/
+    color: red;
+}
+
+.main-menu-bkg {
+    background-image: url('images/nav_space.gif');  
+}
+
+/*** Search Trade Name View ***/
+.v-table-tradename-search .v-table-header-wrap {
+    height:40px;
+    background: none;
+}
+
+.v-table-tradename-search .v-table-header {
+    height:40px;
+}
+
+.v-table-tradename-search .v-table-header td {
+    background-color: #9999cc;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: normal;    
+    text-transform: none;
+    text-shadow: 0 -1px 0 #000000; 
+    color: white;
+    height:40px;
+}
+
+.v-table-tradename-search .v-table-resizer {
+    height:40px;
+}
+
+.v-table-tradename-search .v-table-cell-content {
+    background-color: white;
+    border-color: #EAE3E3;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.v-table-tradename-search .v-table-cell-content-respond-bg-color {
+    background-color: #DCDCDC;
+}
+
+.v-table-tradename-search .v-table-cell-content-unclosed-bg-color {
+    background-color: #FFFF00;
+}
+
+.v-table-tradename-search .v-table-cell-content-onhold-forach-bg-color {
+	background-color: #FF8040;
+}
+
+.v-table-tradename-search .v-table-cell-content-onhold-bg-color {
+	background-color: #00FFFF;
+}
+
+.v-table-tradename-search .v-table-cell-wrapper {
+    white-space: normal;
+}
+
+/*** Trade Name Detail View ***/
+.tradename-detail-modeText-view {
+	color: #0000CC;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.tradename-detail-modeText-edit {
+    color: #009900;
+    font-size: 14px;
+    font-weight: bold;    
+}
+
+.tradename-detail-submissionStatusText {
+    color: red;
+    font-weight: bold;    
+}
+
+/*** TN Comments Window ***/
+.v-table-tn-comments .v-table-header-wrap {
+    /*height:80px;*/
+    background: none;
+}
+
+.v-table-tn-commentsh .v-table-header {
+    height:40px;
+}
+
+.v-table-tn-comments .v-table-header td {
+    background-color: #9999cc;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: normal;    
+    text-transform: none;
+    text-shadow: 0 -1px 0 #000000; 
+    color: white;
+    height:40px;
+}
+
+.v-table-tn-comments .v-table-resizer {
+    height:40px;
+}
+
+.v-table-tn-comments .v-table-cell-content {
+    background-color: white;
+    border-color: #EAE3E3;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.v-table-tn-comments .v-table-cell-wrapper {
+    white-space: normal;
+}
+
+/*** Trade Name Archive Search View ***/
+.v-table-tradename-archive-search .v-table-header-wrap {
+    height: 40px;
+    background: none;
+}
+
+.v-table-tradename-archive-search .v-table-header {
+    height:40px;
+}
+
+.v-table-tradename-archive-search .v-table-header td {
+    background-color: #9999cc;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: normal;    
+    text-transform: none;
+    text-shadow: 0 -1px 0 #000000; 
+    color: white;
+    height:40px;
+}
+
+.v-table-tradename-archive-search .v-table-resizer {
+    height:40px;
+}
+
+.v-table-tradename-archive-search .v-table-cell-content {
+    background-color: white;
+    border-color: #EAE3E3;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.v-table-tradename-archive-search .v-table-cell-wrapper {
+    white-space: normal;
+}
+
+/*** Common ***/
+.whiteBackgroundColor {
+    background-color: white;
+}
+
+.view-title {
+    font-size: 24px;
+    line-height: normal;
+    font-weight: bold;
+}
+
+.actionbtn {
+    width: 80px;    
+}
+
+.actionbtn-large {
+    width: 100px;    
+}
+
+.actionbtn-xlarge {
+    width: 160px;    
+}
+
+.actionbtn-xxlarge {
+    width: 180px;    
+}
+
+.actionbtn-xxxlarge {
+    width: 200px;    
+}
+
+.actionbtn-xxxxlarge {
+    width: 220px;    
+}
+
+.grayBackgroundColor {
+    background-color: #dcdcdc;
+}
+
+.lightSteelBlueBkgColor {
+    background-color: lightsteelblue;
+}
+
+.v-link-common a:link span {
+    font-size: 12px;
+    line-height: normal;
+    color: blue;
+}
+
+.v-link-common a:visited span {
+    color: red;
+}
+
+.v-button-link .v-button-caption {
+    font-size: 12px;
+    color: blue;
+}
+
+.v-button-medium-link .v-button-caption {
+    font-size: 14px;
+    color: blue;
+}
+
+.v-button-bold-link .v-button-caption {
+    font-size: 14px;
+    font-weight: bold;  
+    color: blue;
+}
+
+.v-button-big-link .v-button-caption {
+    font-size: 16px;
+    font-weight: bold;  
+    color: blue;
+    line-height: 18px;
+}
+
+.roundedCorners {
+	border-radius: 15px;
+    -moz-border-radius: 15px;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.very-small-text {
+    font-size: 10px;
+    line-height: normal;
+}
+
+.very-small-bold-text {
+    font-size: 10px;
+    line-height: normal;
+    font-weight: bold;
+}
+
+.cursor-pointer {
+	cursor:pointer;
+}
+
+.required-field-label {
+	color: red;
+}
+
+.required-field {
+  color: red;
+}
+
+.black-field {
+  color: black;
+}
+
+.red-field {
+  color: red;
+}
+
+
+.v-caption-required-textField {
+    color: red;
+}
+
+.v-caption-required-field {
+    color: red;
+}
+
+.error-label {
+	color: red;
+}
+
+.v-select-select{
+    background-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-image: none;
+    border-color: #A2A3A4 #BCBDBE #D2D3D4;
+    border-radius: 3px;
+    -moz-border-top-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-left-colors: none;
+}
+
+/* Lay the options horizontally */
+.v-select-optiongroup-horizontal .v-select-option {
+    display: inline-block;
+}
+
+/* Avoid wrapping if the layout is too tight */
+.v-select-optiongroup-horizontal {
+    white-space: nowrap;
+}
+
+/* Some extra spacing is needed */
+.v-select-optiongroup-horizontal .v-select-option.v-radiobutton {
+    padding-right: 10px;
+}
+
+/* textarea.v-textarea-description {
+    ;font-family: monospace;
+    font-family: Arial,Helvetica,Tahoma,Verdana,sans-serif;
+    font-size: 12px;
+    resize: none;
+    overflow-y: scroll; 
+}*/
+
+textarea.v-textarea-description {
+    font-family: Arial,Helvetica,Tahoma,Verdana,sans-serif;
+    font-size: 12px;
+    resize: none;
+    overflow-y: scroll; 
+}
+
+input.v-disabled {
+    opacity: .6;
+}
+
+textarea.v-disabled  {
+    opacity: .9;
+}
+
+div.v-select-optiongroup.v-disabled {
+	opacity: .9;
+}
+
+div.v-filterselect.v-disabled {
+    opacity: .9;
+}
+
+div.v-select.v-disabled {
+    opacity: .9;
+}
+
+div.v-caption.v-disabled {
+    opacity: .9;
+}
+
+span.v-checkbox.v-disabled {
+	opacity: .9;
+}
+
+.v-disabled {
+  filter: alpha(opacity=100); cursor: default;
+	opacity: 1.0;
+}
+
+.v-disabled.v-button {
+  filter: alpha(opacity=30); cursor: default;
+  opacity: 0.3;
+}
+
+.form-title {
+    font-size: 14px;
+    line-height: normal;
+    font-weight: bold;
+}
+
+.v-required-field-indicator {
+	display: none;
+}
+
+.my_req_indicator {
+  display: none;
+}
+
+/*** Security: User Search View ***/
+.v-table-user-search .v-table-header-wrap {
+    height:40px;
+    background: none;
+}
+
+.v-table-user-search .v-table-header {
+    height:40px;
+}
+
+.v-table-user-search .v-table-header td {
+    background-color: #9999cc;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: normal;    
+    text-transform: none;
+    text-shadow: 0 -1px 0 #000000; 
+    color: white;
+    height:40px;
+}
+
+.v-table-user-search .v-table-resizer {
+    height:40px;
+}
+
+.v-table-user-search .v-table-cell-content {
+    background-color: white;
+    border-color: #EAE3E3;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.v-table-user-search .v-table-cell-wrapper {
+    white-space: normal;
+}
+
+/*** Admin: Payment Clear Search View ***/
+.v-table-payment-clear-search .v-table-header-wrap {
+    height:40px;
+    background: none;
+}
+
+.v-table-payment-clear-search .v-table-header {
+    height:40px;
+}
+
+.v-table-payment-clear-search .v-table-header td {
+    background-color: #9999cc;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: normal;    
+    text-transform: none;
+    text-shadow: 0 -1px 0 #000000; 
+    color: white;
+    height:40px;
+}
+
+.v-table-payment-clear-search .v-table-resizer {
+    height:40px;
+}
+
+.v-table-payment-clear-search .v-table-cell-content {
+    background-color: white;
+    border-color: #EAE3E3;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.v-table-payment-clear-search .v-table-cell-wrapper {
+    white-space: normal;
+}
+
+/*** Admin: Credit Card Transactions Report View ***/
+.v-table-cc-transactions-report .v-table-header-wrap {
+    height:40px;
+    background: none;
+}
+
+.v-table-cc-transactions-report .v-table-header {
+    height:40px;
+}
+
+.v-table-cc-transactions-report .v-table-header td {
+    background-color: #9999cc;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: normal;    
+    text-transform: none;
+    text-shadow: 0 -1px 0 #000000; 
+    color: white;
+    height:40px;
+}
+
+.v-table-cc-transactions-report .v-table-resizer {
+    height:40px;
+}
+
+.v-table-cc-transactions-report .v-table-cell-content {
+    background-color: white;
+    border-color: #EAE3E3;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.v-table-cc-transactions-report .v-table-cell-wrapper {
+    white-space: normal;
+}
+
+.v-filterselect-button {
+    background-image: url('images/vertical-sprites-ie6.png'); WIDTH: 25px
+    
+}
+.v-app  .v-filterselect-input{
+    background: url('images/vertical-sprites-ie6.png') repeat-x left -499px;
+    background-image: url('images/vertical-sprites-ie6.png')
+}
+
+.v-filterselect{
+    background-image: url('images/vertical-sprites-ie6.png')
+}
+
+.mystyle {
+    font-size:   14px;    
+}
+
+.v-button-bottom-link .v-button-caption {
+        font-size: 10px;
+        font-weight: bold;
+        line-height: normal;
+        color: red;        
+}
+
+/*** Application Move View ***/
+.v-table-app-move-table .v-table-header-wrap {
+    height:40px;
+    background: none;
+}
+
+.v-table-app-move-table .v-table-header {
+    height:40px;
+}
+
+.v-table-app-move-table .v-table-header td {
+    background-color: #9999cc;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: normal;    
+    text-transform: none;
+    text-shadow: 0 -1px 0 #000000; 
+    color: white;
+    height:40px;
+}
+
+.v-table-app-move-table .v-table-resizer {
+    height:40px;
+}
+
+.v-table-app-move-table .v-table-cell-content {
+    background-color: white;
+    border-color: #EAE3E3;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.v-table-app-move-table .v-table-cell-wrapper {
+    white-space: normal;
+}
+
+/* css for upload component */
+
+.v-upload.v-button {
+    display: none
+}
+
+.gwt-FileUpload {
+	display: none
+}
