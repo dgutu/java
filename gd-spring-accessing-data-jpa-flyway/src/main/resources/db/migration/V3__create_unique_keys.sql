@@ -1,0 +1,1 @@
+alter tabel user add constraint user_uq1 unique (name);

@@ -1,75 +1,41 @@
 package spring.example;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
-// main class
 @SpringBootApplication
 public class GdSpringAccessingDataJpaFlywayApplication {
+
+	private static final Logger log = LoggerFactory
+			.getLogger(GdSpringAccessingDataJpaFlywayApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(GdSpringAccessingDataJpaFlywayApplication.class, args);
 	}
-}
 
-// model
-@Entity
-@Table(name = "users")
-class User {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "user_id")
-	private long id;
-
-	@Column(name = "name", length = 250)
-	private String name;
-
-	@Column(name = "org_id", nullable = false)
-	private long orgID;
-
-	public User() {
+	@Bean
+	public CommandLineRunner demo(UserRepository repository) {
+		return (args) -> { 
+			repository.save(new User("admin", 0));
+			repository.save(new User("gda", 0));
+			repository.save(new User("dgutu", 0));			
+			
+			log.info("get all users ...");
+			for (User user : repository.findAll()) {
+				log.info(user.toString());
+			}
+			
+			log.info("get user by name");
+			for (User user : repository.findByName("admin")) {
+				log.info(user.toString());
+			}
+			
+			
+		}; 
 	}
 
-	public User(String name, long orgID) {
-		this.name = name;
-		this.orgID = orgID;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public long getOrgID() {
-		return orgID;
-	}
-
-	public void setOrgID(long orgID) {
-		this.orgID = orgID;
-	}
-
-	@Override
-	public String toString() {
-		return String.format("Customer[id=%d, firstName='%s', lastName='%s']", id,
-				firstName, lastName);
-	}
 }
