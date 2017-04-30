@@ -1,0 +1,1 @@
+create index users_i1 on users (org_id);

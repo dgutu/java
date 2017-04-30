@@ -1,0 +1,1 @@
+alter table users add column org_id int not null;
