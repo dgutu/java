@@ -22,7 +22,7 @@ public class GdSpringAccessingDataJpaFlywayApplication {
 // model
 @Entity
 @Table(name = "users")
-class Users {
+class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -35,10 +35,10 @@ class Users {
 	@Column(name = "org_id", nullable = false)
 	private long orgID;
 
-	public Users() {
+	public User() {
 	}
 
-	public Users(String name, long orgID) {
+	public User(String name, long orgID) {
 		this.name = name;
 		this.orgID = orgID;
 	}
@@ -65,5 +65,11 @@ class Users {
 
 	public void setOrgID(long orgID) {
 		this.orgID = orgID;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("Customer[id=%d, firstName='%s', lastName='%s']", id,
+				firstName, lastName);
 	}
 }
