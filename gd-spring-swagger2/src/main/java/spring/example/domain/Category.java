@@ -64,6 +64,6 @@ public class Category extends Creation {
 	@Override
 	public String toString() {
 		return String.format("category[category_id=%d, orgId='%d', name='%s']", id,
-				organization.getOrgId(), name);
+				organization.getOrganizationID(), name);
 	}
 }

@@ -19,7 +19,7 @@ public class Organization extends Creation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "org_id")
-	private long orgId;
+	private long organizationID;
 
 	@Column(unique = true, nullable = false)
 	private String name;
@@ -49,25 +49,23 @@ public class Organization extends Creation {
 			String state, String postalCode, Date creationDate, long createdBy,
 			Date lastModifiedDate, long lastModifiedBy, String guid) {
 
+		super();
+
 		this.name = name;
 		this.address = address;
 		this.address2 = address2;
 		this.city = city;
 		this.state = state;
 		this.postalCode = postalCode;
-		this.creationDate = creationDate;
-		this.createdBy = createdBy;
-		this.lastModifiedDate = lastModifiedDate;
-		this.lastModifiedBy = lastModifiedBy;
 		this.guid = guid;
 	}
 
-	public long getOrgId() {
-		return orgId;
+	public long getOrganizationID() {
+		return organizationID;
 	}
 
-	public void setOrgId(long org_id) {
-		this.orgId = org_id;
+	public void setOrganizationID(long org_id) {
+		this.organizationID = org_id;
 	}
 
 	public String getName() {

@@ -12,13 +12,13 @@ public class Creation {
 
 	@Column(name = "creation_date", nullable = false)
 	protected Date creationDate;
-	
+
 	@Column(name = "created_by")
 	protected long createdBy;
-	
+
 	@Column(name = "last_modified_date", nullable = false)
 	protected Date lastModifiedDate;
-	
+
 	@Column(name = "last_modified_by")
 	protected long lastModifiedBy;
 
