@@ -13,8 +13,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ArraysTest {
 
-	private String[] strings = { "unu", "doi", "trei", "patru", "cinci", "sase", "sapte",
-			"opt", "noua", "zece" };
+	private String[] strings = { "unu", "doi", "trei", "patru", "cinci", "sase", "sapte", "opt", "noua", "zece" };
 
 	private int a[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 	private int[] b = { 11, 12, 13, 14, 15 };
@@ -57,8 +56,7 @@ public class ArraysTest {
 		System.out.println(list.stream().count());
 		System.out.println(list.stream().mapToInt((s) -> s).sum());
 		System.out.println(list.stream().filter(n -> n > 5).count());
-		System.out.println(
-				list.stream().filter(n -> n > 5).reduce((s1, s2) -> s1 + s2).orElse(0));
+		System.out.println(list.stream().filter(n -> n > 5).reduce((s1, s2) -> s1 + s2).orElse(0));
 	}
 
 	@Test
