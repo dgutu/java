@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/tiles-jsp-2.0.7.jar"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/aspectjweaver.jar"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/cglib-2.2.jar"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/commons-beanutils-1.7.0.jar"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/commons-digester-1.8.jar"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/JsonView.jar"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/spring.jar"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/spring-security-acl-2.0.4.jar"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/spring-security-catalina-2.0.4.jar"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/spring-security-core-2.0.4.jar"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/spring-security-core-tiger-2.0.4.jar"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/spring-security-taglibs-2.0.4.jar"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/spring-webmvc.jar"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/standard.jar"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/tiles-api-2.0.7.jar"/>
+	<classpathentry kind="lib" path="/Users/dumitrugutu/Dropbox (Personal)/Java/workspace_mac/ViewResult/lib/tiles-core-2.0.7.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

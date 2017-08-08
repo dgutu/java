@@ -1,0 +1,2 @@
+serviceClass: com.searchincite.client.services.SubjectService
+path: 80A5AD4BEF83DFCCAFB1EA560DC57E41.gwt.rpc

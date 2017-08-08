@@ -1,0 +1,18 @@
+Month	Value	Value * 2
+Jan	0	0
+Feb	10	20
+Mar	20	40
+Apr	30	60
+May	40	80
+Jun	50	100
+Jul	45	90
+Aug	35	70
+Sep	25	50
+Oct	15	30
+Nov	5	10
+Dec	-5	-10
+A	B	C
+Errors	#VALUE!	#DIV/0!
+Formula	4	64
+Date	10/10/97	10/24/68
+

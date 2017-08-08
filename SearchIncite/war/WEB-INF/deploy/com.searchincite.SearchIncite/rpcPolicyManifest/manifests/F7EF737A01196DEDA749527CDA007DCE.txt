@@ -1,0 +1,2 @@
+serviceClass: com.searchincite.client.widgets.documentsadvancedtable.DocumentsTableModelService
+path: B1E7F1CBEA22BD9970D301DD264B41F2.gwt.rpc

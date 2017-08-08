@@ -1,0 +1,2 @@
+serviceClass: com.searchincite.client.widgets.advancedtable.TableModelService
+path: 278F94519324A518357D7E831B1CA3A0.gwt.rpc

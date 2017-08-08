@@ -1,0 +1,2 @@
+serviceClass: com.searchincite.client.services.OntologyService
+path: EE3CF1D5AF93A18CA3E02FAB3C1E3929.gwt.rpc

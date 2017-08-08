@@ -12,8 +12,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class CollectionsTest {
 
-	private String[] strings = { "unu", "doi", "trei", "patru", "cinci", "sase", "sapte",
-			"opt", "noua", "zece" };
+	private String[] strings = { "unu", "doi", "trei", "patru", "cinci", "sase", "sapte", "opt", "noua", "zece" };
 
 	private int a[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 	private int[] b = { 11, 12, 13, 14, 15 };

@@ -1,0 +1,2 @@
+serviceClass: com.searchincite.client.services.DocumentSourceService
+path: 63697FB7B0F97496E84836C20FB362B0.gwt.rpc

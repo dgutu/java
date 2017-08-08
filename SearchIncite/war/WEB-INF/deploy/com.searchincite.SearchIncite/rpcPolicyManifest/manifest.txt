@@ -1,0 +1,13 @@
+# Module com.searchincite.SearchIncite
+# RPC service class, partial path of RPC policy file
+com.searchincite.client.services.DocumentService, C2EB3FEB928FA1B226C08BB823AC7824.gwt.rpc
+com.searchincite.client.services.PhraseService, B92F5368665AD26502D8BDE0A5F24E1C.gwt.rpc
+com.searchincite.client.widgets.advancedtable.TableModelService, 278F94519324A518357D7E831B1CA3A0.gwt.rpc
+com.searchincite.client.services.SubjectService, 80A5AD4BEF83DFCCAFB1EA560DC57E41.gwt.rpc
+com.searchincite.client.services.DocumentSourceService, 63697FB7B0F97496E84836C20FB362B0.gwt.rpc
+com.searchincite.client.services.OrganizationService, ADF37BA2548DC746D62AC143C504E13D.gwt.rpc
+com.searchincite.client.security.LoginService, 0D3A1F3C5CDE3D049DB0DDD43B28F78E.gwt.rpc
+com.searchincite.client.services.OntologyService, EE3CF1D5AF93A18CA3E02FAB3C1E3929.gwt.rpc
+com.searchincite.client.services.CategoryService, 7E1FCA98B9B70C778B8C34A7C0CECF09.gwt.rpc
+com.searchincite.client.services.UserService, 40EB1B7E7E8C83FCBA9C20A416CA2BD4.gwt.rpc
+com.searchincite.client.widgets.documentsadvancedtable.DocumentsTableModelService, B1E7F1CBEA22BD9970D301DD264B41F2.gwt.rpc

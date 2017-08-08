@@ -1,0 +1,2 @@
+serviceClass: com.searchincite.client.services.OrganizationService
+path: ADF37BA2548DC746D62AC143C504E13D.gwt.rpc

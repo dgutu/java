@@ -25,19 +25,20 @@ import javax.xml.ws.WebServiceFeature;
 @WebServiceClient(name = "netForumXML", targetNamespace = "http://www.avectra.com/2005/", wsdlLocation = "http://access.personalcarecouncil.org/xweb/secure/pcpcxml.asmx?wsdl")
 public class NetForumXML extends Service {
 
-	private final static URL	NETFORUMXML_WSDL_LOCATION;
-	private final static Logger	logger	= Logger.getLogger(com.avectra._2005.NetForumXML.class.getName());
+	private final static URL NETFORUMXML_WSDL_LOCATION;
+	private final static Logger logger = Logger.getLogger(com.avectra._2005.NetForumXML.class.getName());
 
 	static {
 		URL url = null;
 		try {
 			URL baseUrl;
 			baseUrl = com.avectra._2005.NetForumXML.class.getResource(".");
-			//url = new URL(baseUrl, "http://access.personalcarecouncil.org/xweb/secure/pcpcxml.asmx?wsdl");
-			 url = new URL(baseUrl, "http://access.personalcarecouncil.org/nFPCPCTest/xweb/secure/pcpcxml.asmx?wsdl");
-		}
-		catch (MalformedURLException e) {
-			logger.warning("Failed to create URL for the wsdl Location: 'http://access.personalcarecouncil.org/xweb/secure/pcpcxml.asmx?wsdl', retrying as a local file");
+			url = new URL(baseUrl, "http://access.personalcarecouncil.org/xweb/secure/pcpcxml.asmx?wsdl");
+			// url = new URL(baseUrl,
+			// "http://access.personalcarecouncil.org/nFPCPCTest/xweb/secure/pcpcxml.asmx?wsdl");
+		} catch (MalformedURLException e) {
+			logger.warning(
+					"Failed to create URL for the wsdl Location: 'http://access.personalcarecouncil.org/xweb/secure/pcpcxml.asmx?wsdl', retrying as a local file");
 			// logger.warning("Failed to create URL for the wsdl Location:
 			// 'http://access.personalcarecouncil.org/nFPCPCTest/xweb/secure/pcpcxml.asmx?wsdl',
 			// retrying as a local file");
@@ -74,7 +75,8 @@ public class NetForumXML extends Service {
 	 */
 	@WebEndpoint(name = "netForumXMLSoap")
 	public NetForumXMLSoap getNetForumXMLSoap(WebServiceFeature... features) {
-		return super.getPort(new QName("http://www.avectra.com/2005/", "netForumXMLSoap"), NetForumXMLSoap.class, features);
+		return super.getPort(new QName("http://www.avectra.com/2005/", "netForumXMLSoap"), NetForumXMLSoap.class,
+				features);
 	}
 
 	/**
@@ -97,7 +99,8 @@ public class NetForumXML extends Service {
 	 */
 	@WebEndpoint(name = "netForumXMLHttpGet")
 	public NetForumXMLHttpGet getNetForumXMLHttpGet(WebServiceFeature... features) {
-		return super.getPort(new QName("http://www.avectra.com/2005/", "netForumXMLHttpGet"), NetForumXMLHttpGet.class, features);
+		return super.getPort(new QName("http://www.avectra.com/2005/", "netForumXMLHttpGet"), NetForumXMLHttpGet.class,
+				features);
 	}
 
 	/**
@@ -106,7 +109,8 @@ public class NetForumXML extends Service {
 	 */
 	@WebEndpoint(name = "netForumXMLHttpPost")
 	public NetForumXMLHttpPost getNetForumXMLHttpPost() {
-		return super.getPort(new QName("http://www.avectra.com/2005/", "netForumXMLHttpPost"), NetForumXMLHttpPost.class);
+		return super.getPort(new QName("http://www.avectra.com/2005/", "netForumXMLHttpPost"),
+				NetForumXMLHttpPost.class);
 	}
 
 	/**
@@ -120,7 +124,8 @@ public class NetForumXML extends Service {
 	 */
 	@WebEndpoint(name = "netForumXMLHttpPost")
 	public NetForumXMLHttpPost getNetForumXMLHttpPost(WebServiceFeature... features) {
-		return super.getPort(new QName("http://www.avectra.com/2005/", "netForumXMLHttpPost"), NetForumXMLHttpPost.class, features);
+		return super.getPort(new QName("http://www.avectra.com/2005/", "netForumXMLHttpPost"),
+				NetForumXMLHttpPost.class, features);
 	}
 
 }

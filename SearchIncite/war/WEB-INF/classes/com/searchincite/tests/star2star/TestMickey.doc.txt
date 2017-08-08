@@ -1,0 +1,10 @@
+This is a short Micro$oft Word sample document created using (MS Office XP) Word and saved in Word 6.0/95 format.
+
+Choose File in the Word menu, select Properties and then click on Custom tab. If there are entries entered in this section, the POI will throw exception as I explained at the very beginning of MyDocumentSummaryInformation.java source file.
+
+
+NOTE: I might have been using some code from unstable versions of POI.
+the sample I’m sending was tested using “poi-1.5.1.jar”. I have not checked for any newer version since then.
+
+best regards,
+miroslav

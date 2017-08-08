@@ -1,0 +1,89 @@
+9
+
+dir
+431
+svn+ssh://ahitchcock@secure.dibble.net/home/svn/searchincite/trunk/trunk/src/com/searchincite/server/docconverter/identification
+svn+ssh://ahitchcock@secure.dibble.net/home/svn/searchincite
+
+
+
+2008-10-24T17:23:03.938630Z
+209
+Adam Hitchcock
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+dd1e9c38-9d30-0410-9211-ccd45209f6a4
+
+FormatDescriptionReader.java
+file
+
+
+
+
+2008-10-20T19:15:09.000000Z
+cc0bf5884d3e5402dc27a6c70234bfee
+2008-08-27T17:02:02.676024Z
+143
+Adam Hitchcock
+
+FormatIdentification.java
+file
+
+
+
+
+2008-10-24T17:39:15.000000Z
+2398d084818506d6da0457133d2493cd
+2008-10-24T17:23:03.938630Z
+209
+Adam Hitchcock
+
+formats.txt
+file
+
+
+
+
+2008-10-20T19:15:09.000000Z
+b7d1f8d985b31160c92f09648883c274
+2008-09-08T18:00:35.676697Z
+149
+Adam Hitchcock
+has-props
+
+FormatDescription.java
+file
+
+
+
+
+2008-10-20T19:15:09.000000Z
+9d258c9a7598fb7d6200cbf3c4101b3b
+2008-09-08T18:00:35.676697Z
+149
+Adam Hitchcock
+
+idtree.java
+file
+
+
+
+
+2008-10-20T19:15:09.000000Z
+9e93ad970c905269ab66dde3ec9b2d92
+2008-08-27T17:02:02.676024Z
+143
+Adam Hitchcock
+

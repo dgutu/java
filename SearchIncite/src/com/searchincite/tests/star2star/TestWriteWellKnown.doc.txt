@@ -1,0 +1,1 @@
+This document is used for testing POI HPSFÕs writing capabilities for the summary information stream and the document summary information stream.

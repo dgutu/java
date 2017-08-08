@@ -1,0 +1,423 @@
+body,td,a,div,.p{font-family:arial,sans-serif; font-size: 8pt;}
+div,td{color:#000000}
+a:link,.w,.w a:link{color:#0000cc}
+a:visited{color:#551a8b}
+a:active{color:#ff0000}
+
+.gwt-MenuBar {
+  background-color: #C3D9FF;
+  border: 1px solid #87B3FF;
+  cursor: default;
+}
+
+.gwt-MenuBar .gwt-MenuItem {
+  padding: 1px 4px 1px 4px;
+  font-size: smaller;
+  cursor: default;
+}
+
+.gwt-MenuBar .gwt-MenuItem-selected { background-color: #E8EEF7; }
+
+.si-DetailTable {
+  background-color: white;
+  border: 1px solid black;
+  cursor: default;
+}
+
+.gwt-TabPanelBottom {
+  border-left: 1px solid #87B3FF;
+}
+
+
+.gwt-TabBar {
+  background-color: #C3D9FF;
+  font-size: smaller;
+}
+
+.gwt-TabBar .gwt-TabBarFirst {
+  height: 100%;
+  border-bottom: 1px solid #87B3FF;
+  padding-left: 3px;
+}
+
+.gwt-TabBar .gwt-TabBarRest {
+  border-bottom: 1px solid #87B3FF;
+  padding-right: 3px;
+}
+
+.gwt-TabBar .gwt-TabBarItem {
+  border-top: 1px solid #C3D9FF;
+  border-bottom: 1px solid #87B3FF;
+  padding: 2px;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.gwt-TabBar .gwt-TabBarItem-selected {
+  font-weight: bold;
+  background-color: #E8EEF7;
+  border-top: 1px solid #87B3FF;
+  border-left: 1px solid #87B3FF;
+  border-right: 1px solid #87B3FF;
+  border-bottom: 1px solid #E8EEF7;
+  padding: 2px;
+  cursor: default;
+}
+
+.columnHeader {
+	background-color: #CACACA;
+}
+			
+.images-Image {
+  margin: 0px;
+}
+
+.gwt-DialogBox {
+	border: 2px solid #AAAAAA;
+	background-color: white;
+}
+
+.gwt-ListItem {
+	cursor: hand;
+}
+
+.gwt-Button {
+	font-family: sans-serif;
+	font-size: 8pt;
+	width: 60px;
+}
+
+.gwt-DialogBox .Caption {
+	background-image: url(gray_gradient.gif);
+	background-repeat: repeat-x;
+	padding: 4px;
+	padding-bottom: 8px;
+	font-weight: bold;
+	cursor: default;
+}
+
+.gwt-ListBox {
+	font-family: Arial;
+	font-size: 8pt;
+}
+
+.navRootLabel {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+.gwt-TreeItem {
+	font-size: 8pt;
+	cursor: hand;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+.gwt-TreeItem-selected {
+	font-size: 8pt;
+	cursor: hand;
+	background-color: blue;
+	color: white;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+.gwt-Tree{
+	padding: 0px 0px 0px 0px;
+}
+
+.categoryOntologySelectorTable {
+	background-image: url(gray_gradient.gif);
+}
+
+.clickableRow {
+	cursor: hand;
+}
+
+.subjectList {
+	background-color: silver;
+}
+
+.subjectList-SelectedRow {
+	background-color: #87B3FF;
+	cursor: hand;
+	height: 10px;
+}
+
+.subjectList-Row {
+	background-color: white;
+	cursor: hand;
+	height: 10px;
+}
+
+.subjectList-EmptyRow {
+	background-color: white;
+	cursor: default;
+}
+
+.subjectList-ColumnHeader {
+	background-image: url(blue_gradient.gif);
+	height: 10px;
+}
+
+.subjectList-Title {
+	font-weight: bold;
+}
+
+.phraseList {
+	background-color: silver;
+}
+
+.phraseList-SelectedRow {
+	background-color: #87B3FF;
+	cursor: hand;
+	height: 10px;
+}
+
+.phraseList-Row {
+	background-color: white;
+	cursor: hand;
+	height: 10px;
+}
+
+.phraseList-Title {
+	font-weight: bold;
+}
+
+.phraseList-ColumnHeader {
+	background-image: url(blue_gradient.gif);
+	height: 10px;
+}
+
+.phraseList-EmptyRow {
+	background-color: white;
+	cursor: default;
+}
+
+.imageButton {
+	cursor: hand;
+	margin: 1px 1px 1px 1px;
+}
+
+.imageButton-OnMouseOver {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	margin: 0px 0px 0px 0px;
+}
+
+.gwt-TextBox {
+	font-family: sans-serif;
+	font-size: 8pt;
+}
+
+.gwt-PasswordTextBox {
+	font-family: sans-serif;
+	font-size: 8pt;
+}
+
+.loginLabel {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+.gwt-Tree .gwt-TreeItem{ 
+	height: 10px;
+}
+
+.gwt-Tree .gwt-TreeItem-selected { 
+	background-color: blue ;
+	cursor: hand; 
+	font-size: 8pt;
+	border: 1px silver solid;
+	height: 10px;
+} 
+
+.documentSourceList {
+	background-color: silver;
+}
+
+.documentSourceList-SelectedRow {
+	background-color: #87B3FF;
+	cursor: hand;
+	height: 10px;
+}
+
+.documentSourceList-Row {
+	background-color: white;
+	cursor: hand;
+	height: 10px;
+}
+
+.documentSourceList-EmptyRow {
+	background-color: white;
+	cursor: default;
+}
+
+.documentSourceList-ColumnHeader {
+	background-image: url(blue_gradient.gif);
+	height: 10px;
+}
+
+.documentSourceList-Title {
+	font-weight: bold;
+}
+
+.documentList {
+	background-color: silver;
+}
+
+.documentList-SelectedRow {
+	background-color: #87B3FF;
+	cursor: hand;
+	height: 10px;
+}
+
+.documentList-Row {
+	background-color: white;
+	cursor: hand;
+	height: 10px;
+}
+
+.documentList-Title {
+	font-weight: bold;
+}
+
+.documentList-ColumnHeader {
+	background-image: url(blue_gradient.gif);
+	height: 10px;
+}
+
+.documentList-EmptyRow {
+	background-color: white;
+	cursor: default;
+}
+
+.gwt-Hyperlink {
+	color: blue;
+	text-decoration: underline;	
+}
+
+.annotatedDocContainer {
+	margin-top: 1px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: silver;
+}
+
+.contextMenu {
+	cursor: hand;
+	font-size: 8pt;
+}
+.contextMenuContainer {
+	background-color: #eeeeee;
+	border-style: ridge;
+	border-width: 1px;
+	cursor: hand;
+}
+
+.userList {
+	background-color: silver;
+}
+
+.userList-SelectedRow {
+	background-color: #87B3FF;
+	cursor: hand;
+	height: 10px;
+}
+
+.userList-Row {
+	background-color: white;
+	cursor: hand;
+	height: 10px;
+}
+
+.userList-EmptyRow {
+	background-color: white;
+	cursor: default;
+}
+
+.userList-ColumnHeader {
+	background-image: url(blue_gradient.gif);
+	height: 10px;
+}
+
+.userList-Title {
+	font-weight: bold;
+}
+
+.gwt-HorizontalSplitPanel-hsplitter { 
+	background-color: red;
+	border-color: black;
+	border-style: solid;
+	border-width: 5px;
+	
+}
+
+.gwt-Hyperlink {
+	cursor: hand;
+}
+
+.resultTreeContainer {
+	border: 1px black solid;
+}
+
+.resultPaneLabel {
+	font-weight: bold;
+}
+
+.orgList {
+	background-color: silver;
+}
+
+.orgList-SelectedRow {
+	background-color: #87B3FF;
+	cursor: hand;
+	height: 10px;
+}
+
+.orgList-Row {
+	background-color: white;
+	cursor: hand;
+	height: 10px;
+}
+
+.orgList-EmptyRow {
+	background-color: white;
+	cursor: default;
+}
+
+.orgList-ColumnHeader {
+	background-image: url(blue_gradient.gif);
+	height: 10px;
+}
+
+.orgList-Title {
+	font-weight: bold;
+}
+
+.indentedRadioButton {
+	margin-left: 25px;
+}
+
+.solidBlackBorder {
+  border: 1px solid black;
+}
+
+.welcomeMessageTextAreaContainer {
+  padding-left: 10px;
+}
+
+.welcomeMessageTextArea {
+  font-family: arial;
+  font-size: 8pt;
+}
+
+.popup-message
+{
+	font-size: 15pt;
+    padding: 15px;
+	font-weight: bold;
+	background-color: gree;	
+	color: red;
+}

@@ -1,0 +1,2 @@
+serviceClass: com.searchincite.client.security.LoginService
+path: 0D3A1F3C5CDE3D049DB0DDD43B28F78E.gwt.rpc

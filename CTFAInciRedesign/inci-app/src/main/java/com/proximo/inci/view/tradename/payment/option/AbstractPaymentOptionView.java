@@ -10,6 +10,9 @@ package com.proximo.inci.view.tradename.payment.option;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.proximo.inci.DOTradeName;
 import com.proximo.inci.caption.CaptionResolver;
 import com.proximo.inci.service.security.SecurityInfo;
@@ -21,102 +24,102 @@ import com.vaadin.ui.Alignment;
 
 public abstract class AbstractPaymentOptionView extends BaseView {
 
-    /* Navigation parameters' keys */
-    public static String FORM_TN_NAVIG_PARAM_KEY = "formTn";
-    public static String BACK_VIEW = "backView"; 
+	/* Navigation parameters' keys */
+	private static Logger logger = LoggerFactory.getLogger(AbstractPaymentOptionView.class);
+	public static String FORM_TN_NAVIG_PARAM_KEY = "formTn";
+	public static String BACK_VIEW = "backView";
 
-    protected DOTradeName formTn;
-    protected String backView;
+	protected DOTradeName formTn;
+	protected String backView;
 
-    private HeaderTextLayout headerTextLayout;
-    private PaymentOptionLayout paymentOptionLayout;
+	private HeaderTextLayout headerTextLayout;
+	private PaymentOptionLayout paymentOptionLayout;
 
-    public AbstractPaymentOptionView(MainWindow mainWindow, boolean addCaption, String captionKey) {
-        super(mainWindow, false, null);
-    }
+	public AbstractPaymentOptionView(MainWindow mainWindow, boolean addCaption, String captionKey) {
+		super(mainWindow, false, null);
+	}
 
-    protected abstract InstructionsText createInstructionsText();
+	protected abstract InstructionsText createInstructionsText();
 
-    public abstract int getPaymentType();
+	public abstract int getPaymentType();
 
-    protected abstract Long submitSpecificPayment();
-    
-    protected abstract void sendSpecificEmail(final long referenceId);
+	protected abstract Long submitSpecificPayment();
 
-    protected abstract ViewKey getThankYouViewKey();
+	protected abstract void sendSpecificEmail(final long referenceId);
 
-    @Override
-    protected void init() {
-        super.init();
+	protected abstract ViewKey getThankYouViewKey();
 
-        headerTextLayout = new HeaderTextLayout(this);
-        paymentOptionLayout = new PaymentOptionLayout(this);
-    }
+	@Override
+	protected void init() {
+		super.init();
 
-    @Override
-    protected void addContent() {
-        super.addContent();
+		headerTextLayout = new HeaderTextLayout(this);
+		paymentOptionLayout = new PaymentOptionLayout(this);
+	}
 
-        addComponent(headerTextLayout, Alignment.MIDDLE_CENTER);
-        addSpace();
-        addComponent(paymentOptionLayout);
-    }
+	@Override
+	protected void addContent() {
+		super.addContent();
 
-    @Override
-    public void applyNavigationParameters(Map<String, Object> navigationParameterMap) {
-    	try {
-    		formTn = (DOTradeName) navigationParameterMap.get(FORM_TN_NAVIG_PARAM_KEY);
-    		backView = (String) navigationParameterMap.get(BACK_VIEW);
-    	}
-    	catch(Exception ex) {    		
-    	}
+		addComponent(headerTextLayout, Alignment.MIDDLE_CENTER);
+		addSpace();
+		addComponent(paymentOptionLayout);
+	}
 
-        headerTextLayout.generateContent();
-        paymentOptionLayout.generateContent();
-    }
+	@Override
+	public void applyNavigationParameters(Map<String, Object> navigationParameterMap) {
+		try {
+			formTn = (DOTradeName) navigationParameterMap.get(FORM_TN_NAVIG_PARAM_KEY);
+			backView = (String) navigationParameterMap.get(BACK_VIEW);
+		} catch (Exception ex) {
+		}
 
-    @Override
-    public void applySecurityInfo(SecurityInfo securityInfo) {
-        /*
-         * AbstractPaymentOptionView has no component for which to apply the
-         * security info.
-         */
-    }
+		headerTextLayout.generateContent();
+		paymentOptionLayout.generateContent();
+	}
 
-    public void submitPayment() {
-        if (formTn.paymentInfo.recID == 0) {
-            Long referenceId = submitSpecificPayment();
-            
-            // -1 - application was submitted already
-            if (referenceId == -1) {
-            	showInfoMsgWindow(CaptionResolver.getCaption("submitted.already"));
-            }
-            else {            
-            	sendSpecificEmail(referenceId);
-            	navigateToThankYouView(referenceId);
-            }
-        }
-    }
+	@Override
+	public void applySecurityInfo(SecurityInfo securityInfo) {
+		/*
+		 * AbstractPaymentOptionView has no component for which to apply the
+		 * security info.
+		 */
+	}
 
-    private void navigateToThankYouView(Long referenceId) {
-        Map<String, Object> thankYouViewNavigParamsMap = new HashMap<String, Object>();
+	public void submitPayment() {
+		if (formTn.paymentInfo.recID == 0) {
+			Long referenceId = submitSpecificPayment();
 
-        thankYouViewNavigParamsMap.put(AbstractPaymentOptionThankYouView.FORM_TN_NAVIG_PARAM_KEY, formTn);
-        thankYouViewNavigParamsMap.put(AbstractPaymentOptionThankYouView.REF_ID_NAVIG_PARAM_KEY, referenceId);
-        thankYouViewNavigParamsMap.put(AbstractPaymentOptionThankYouView.BACK_VIEW, backView);
+			// -1 - application was submitted already
+			if (referenceId == -1) {
+				showInfoMsgWindow(CaptionResolver.getCaption("submitted.already"));
+			} else {
+				logger.info("Application " + getFormTn().tnNumber + "submitted");
+				sendSpecificEmail(referenceId);
+				navigateToThankYouView(referenceId);
+			}
+		}
+	}
 
-        navigateTo(getThankYouViewKey().toString(), thankYouViewNavigParamsMap);
-    }
+	private void navigateToThankYouView(Long referenceId) {
+		Map<String, Object> thankYouViewNavigParamsMap = new HashMap<String, Object>();
 
-    public DOTradeName getFormTn() {
-        return formTn;
-    }
-    
-    public PaymentOptionLayout getPaymentOptionLayout() {
-    	return paymentOptionLayout;
-    }
-    
-    public String getBackView() {
-    	return backView;
-    }
+		thankYouViewNavigParamsMap.put(AbstractPaymentOptionThankYouView.FORM_TN_NAVIG_PARAM_KEY, formTn);
+		thankYouViewNavigParamsMap.put(AbstractPaymentOptionThankYouView.REF_ID_NAVIG_PARAM_KEY, referenceId);
+		thankYouViewNavigParamsMap.put(AbstractPaymentOptionThankYouView.BACK_VIEW, backView);
+
+		navigateTo(getThankYouViewKey().toString(), thankYouViewNavigParamsMap);
+	}
+
+	public DOTradeName getFormTn() {
+		return formTn;
+	}
+
+	public PaymentOptionLayout getPaymentOptionLayout() {
+		return paymentOptionLayout;
+	}
+
+	public String getBackView() {
+		return backView;
+	}
 }

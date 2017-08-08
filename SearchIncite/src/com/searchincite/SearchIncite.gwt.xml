@@ -1,0 +1,50 @@
+<module>
+
+	<!-- Inherit the core Web Toolkit stuff.                  -->
+	<inherits name='com.google.gwt.user.User'/>
+
+	<!--  Gwm dependency -->
+	<inherits name='org.gwm.GwtWindowManager'/>
+
+	<!-- GWT-Ext - Enhanced control library -->
+	<inherits name='com.gwtext.GwtExt'/> 
+	
+	<inherits name='asquare.gwt.tk.Tk'/>
+
+	<!-- Specify the app entry point class.                   -->
+	        
+	<entry-point class='com.searchincite.client.SearchIncite'/>
+	<servlet path='/auth' class='com.searchincite.server.security.LoginServiceImpl'/>
+	<servlet path='/ontology' class='com.searchincite.server.data.OntologyServiceImpl'/>
+	<servlet path='/category' class='com.searchincite.server.data.CategoryServiceImpl'/>
+	<servlet path='/subject' class='com.searchincite.server.data.SubjectServiceImpl'/>
+	<servlet path='/phrase' class='com.searchincite.server.data.PhraseServiceImpl'/>
+	<servlet path='/docsource' class='com.searchincite.server.data.DocumentSourceServiceImpl'/>
+	<servlet path='/document' class='com.searchincite.server.data.DocumentServiceImpl'/>
+	<servlet path='/upload' class='com.searchincite.server.data.UploadServiceImpl'/>
+	<servlet path='/user' class='com.searchincite.server.data.UserServiceImpl'/>
+	<servlet path='/organization' class='com.searchincite.server.data.OrganizationServiceImpl'/>
+	<servlet path='/submitText' class='com.searchincite.server.data.external.SubmitTextServlet'/>
+	<servlet path='/retrieveResult' class='com.searchincite.server.data.external.RetrieveResultServlet'/>
+	<servlet path='/createSource' class='com.searchincite.server.data.external.CreateSourceServlet'/>
+	<servlet path='/createOrganization' class='com.searchincite.server.data.external.CreateOrganizationServlet'/>
+	<!-- <servlet path='/autofeeds' class='com.searchincite.server.data.AutofeedServiceImpl'/> -->
+	<servlet path='/AutofeedsTableModelService' class='com.searchincite.server.data.AutofeedsTableModelServiceImpl'/>	
+	<servlet path='/uploadOntology' class='com.searchincite.server.data.UploadOntologyServiceImpl'/>
+
+	<inherits name="com.searchincite.SearchIncite"/>
+	<inherits name="com.searchincite.SearchIncite"/>
+	<inherits name="com.searchincite.SearchIncite"/>
+	<inherits name="com.searchincite.SearchIncite"/>
+	<inherits name="com.searchincite.SearchIncite"/>
+	<inherits name="com.searchincite.SearchIncite"/>
+	<inherits name="com.searchincite.SearchIncite"/>
+	<inherits name="com.searchincite.SearchIncite"/>
+	<inherits name="com.searchincite.SearchIncite"/>
+	<inherits name="com.searchincite.SearchIncite"/>
+	<inherits name="com.searchincite.SearchIncite"/>
+	<inherits name="com.searchincite.SearchIncite"/>
+	<inherits name="com.searchincite.SearchIncite"/>
+	<!-- <inherits name="com.google.gwt.logging.Logging"/> -->
+
+</module>

@@ -23,13 +23,13 @@ import com.proximo.inci.view.ViewKey;
 import com.proximo.inci.view.admin.AdminFunctionsView;
 import com.proximo.inci.view.admin.ach_clear.detail.AchClearDetailView;
 import com.proximo.inci.view.admin.ach_clear.search.AchClearSearchView;
+import com.proximo.inci.view.admin.application_move.APPMoveSearchView;
 import com.proximo.inci.view.admin.cc_transactions_report.CCTransactionsReportView;
 import com.proximo.inci.view.admin.check_clear.detail.CheckClearDetailView;
 import com.proximo.inci.view.admin.check_clear.search.CheckClearSearchView;
 import com.proximo.inci.view.admin.export.ExportView;
 import com.proximo.inci.view.admin.misc_text_maint.detail.MTMDetailView;
 import com.proximo.inci.view.admin.misc_text_maint.search.MTMView;
-import com.proximo.inci.view.admin.application_move.APPMoveSearchView;
 import com.proximo.inci.view.home.PrivacyPolicyView;
 import com.proximo.inci.view.home.ProcessView;
 import com.proximo.inci.view.home.intro.ContactView;
@@ -79,155 +79,148 @@ import com.vaadin.ui.Panel;
 @SuppressWarnings("serial")
 public class MainWindow extends AbstractMainWindow {
 
-    private static Logger logger = LoggerFactory.getLogger(MainWindow.class);
+	private static Logger logger = LoggerFactory.getLogger(MainWindow.class);
 
-    private MainLayout mainLayout;
-    
-    public MainWindow(String caption, String themePagesUrl, Map<String, Object> applicationProperties,
-            ViewKey currentViewKey, HttpServletResponse response, HttpServletRequest request) {
-        super(caption, themePagesUrl, applicationProperties, currentViewKey, response, request);
-    }
+	private MainLayout mainLayout;
 
-    /** Main window initialization. */
-    @Override
-    protected void init() {
-        logger.info("Main window initialization started");
+	public MainWindow(String caption, String themePagesUrl, Map<String, Object> applicationProperties,
+			ViewKey currentViewKey, HttpServletResponse response, HttpServletRequest request) {
+		super(caption, themePagesUrl, applicationProperties, currentViewKey, response, request);
+	}
 
-        addStyleName("whiteBackgroundColor");
+	/** Main window initialization. */
+	@Override
+	protected void init() {
+		logger.info("Main window initialization started");
 
-        Panel p = new Panel();
-        
-        mainLayout = new MainLayout(this);
-        p.setContent(mainLayout);
-        p.setSizeFull();
-        setContent(p);
-        
-        initViews();
-        initSubWindows();
-        
-        initUriFu();
-        
-        logger.info("Main window initialization finished");
-    }
+		addStyleName("whiteBackgroundColor");
 
-    private void initViews() {
-        viewsMap = new HashMap<ViewKey, AbstractView>();
+		Panel p = new Panel();
 
-        viewKeyToClassMap = new HashMap<ViewKey, Class<? extends AbstractView>>();
+		mainLayout = new MainLayout(this);
+		p.setContent(mainLayout);
+		p.setSizeFull();
+		setContent(p);
 
-        viewKeyToClassMap.put(ViewKey.SCR_LOGON, LogonView.class);
-        viewKeyToClassMap.put(ViewKey.SCR_USER_SEARCH, UserSearchView.class);
-        viewKeyToClassMap.put(ViewKey.SCR_USER_DETAIL, UserDetailView.class);
+		initViews();
+		initSubWindows();
 
-        viewKeyToClassMap.put(ViewKey.ADMIN_FUNCTIONS, AdminFunctionsView.class);
-        viewKeyToClassMap.put(ViewKey.ADMIN_EXPORT, ExportView.class);
-        viewKeyToClassMap.put(ViewKey.ADMIN_CHECK_CLEARING_SEARCH, CheckClearSearchView.class);
-        viewKeyToClassMap.put(ViewKey.ADMIN_CHECK_CLEARING_DETAIL, CheckClearDetailView.class);
-        viewKeyToClassMap.put(ViewKey.ADMIN_ACH_CLEARING_SEARCH, AchClearSearchView.class);
-        viewKeyToClassMap.put(ViewKey.ADMIN_ACH_CLEARING_DETAIL, AchClearDetailView.class);
-        viewKeyToClassMap.put(ViewKey.ADMIN_CC_TRANSACTIONS_REPORT, CCTransactionsReportView.class);
-        viewKeyToClassMap.put(ViewKey.ADMIN_MISC_TEXT_MAINT_SEARCH, MTMView.class);
-        viewKeyToClassMap.put(ViewKey.ADMIN_MISC_TEXT_MAINT_DETAIL, MTMDetailView.class);
-        
-        viewKeyToClassMap.put(ViewKey.ADMIN_APP_MOVE_SEARCH, APPMoveSearchView.class);
+		initUriFu();
 
-        viewKeyToClassMap.put(ViewKey.HOME_PROCESS, ProcessView.class);
-        viewKeyToClassMap.put(ViewKey.HOME_INTRODUCTION, IntroductionView.class);
-        viewKeyToClassMap.put(ViewKey.HOME_INTRODUCTION_DETAIL, IntroductionDetailView.class);
-        viewKeyToClassMap.put(ViewKey.HOME_INSTRUCTIONS, InstructionsView.class);
-        viewKeyToClassMap.put(ViewKey.HOME_CONTACT, ContactView.class);        
-        
+		logger.info("Main window initialization finished");
+	}
 
-        viewKeyToClassMap.put(ViewKey.TN_SEARCH, TradeNameSearchView.class);
-        viewKeyToClassMap.put(ViewKey.TN_DETAIL, TradeNameDetailView.class);
+	private void initViews() {
+		viewsMap = new HashMap<ViewKey, AbstractView>();
 
-        viewKeyToClassMap.put(ViewKey.TN_PAYMENT, PaymentView.class);
-        viewKeyToClassMap.put(ViewKey.TN_PAYMENT_BY_CHECK, PaymentByCheckView.class);
-        viewKeyToClassMap.put(ViewKey.TN_PAYMENT_BY_CHECK_THANK_YOU, PayByCheckThankYouView.class);
-        viewKeyToClassMap.put(ViewKey.TN_PAYMENT_BY_WIRE, PaymentByWireView.class);
-        viewKeyToClassMap.put(ViewKey.TN_PAYMENT_BY_WIRE_THANK_YOU, PayByWireThankYouView.class);
-        viewKeyToClassMap.put(ViewKey.TN_PAYMENT_BY_CC, PaymentByCCView.class);
-        viewKeyToClassMap.put(ViewKey.TN_PAYMENT_BY_CC_THANK_YOU, PayByCCThankYouView.class);
-        
-        viewKeyToClassMap.put(ViewKey.TN_ARCHIVE, TradeNameArchiveView.class);
-        viewKeyToClassMap.put(ViewKey.TN_ARCHIVE_SEARCH, TradeNameArchiveSearchView.class);
-        viewKeyToClassMap.put(ViewKey.TN_ARCHIVE_MOVE, TradeNameArchiveMoveView.class);
-        
-        viewKeyToClassMap.put(ViewKey.PRIVACY_POLICY, PrivacyPolicyView.class);
-    }
+		viewKeyToClassMap = new HashMap<ViewKey, Class<? extends AbstractView>>();
 
-    private void initSubWindows() {
-        subWindowsMap = new HashMap<SubWindowKey, SubWindow>();
+		viewKeyToClassMap.put(ViewKey.SCR_LOGON, LogonView.class);
+		viewKeyToClassMap.put(ViewKey.SCR_USER_SEARCH, UserSearchView.class);
+		viewKeyToClassMap.put(ViewKey.SCR_USER_DETAIL, UserDetailView.class);
 
-        windowKeyToClassMap = new HashMap<SubWindowKey, Class<? extends SubWindow>>();
+		viewKeyToClassMap.put(ViewKey.ADMIN_FUNCTIONS, AdminFunctionsView.class);
+		viewKeyToClassMap.put(ViewKey.ADMIN_EXPORT, ExportView.class);
+		viewKeyToClassMap.put(ViewKey.ADMIN_CHECK_CLEARING_SEARCH, CheckClearSearchView.class);
+		viewKeyToClassMap.put(ViewKey.ADMIN_CHECK_CLEARING_DETAIL, CheckClearDetailView.class);
+		viewKeyToClassMap.put(ViewKey.ADMIN_ACH_CLEARING_SEARCH, AchClearSearchView.class);
+		viewKeyToClassMap.put(ViewKey.ADMIN_ACH_CLEARING_DETAIL, AchClearDetailView.class);
+		viewKeyToClassMap.put(ViewKey.ADMIN_CC_TRANSACTIONS_REPORT, CCTransactionsReportView.class);
+		viewKeyToClassMap.put(ViewKey.ADMIN_MISC_TEXT_MAINT_SEARCH, MTMView.class);
+		viewKeyToClassMap.put(ViewKey.ADMIN_MISC_TEXT_MAINT_DETAIL, MTMDetailView.class);
 
-        windowKeyToClassMap.put(SubWindowKey.CMN_LOADING, LoadingWindow.class);
-        windowKeyToClassMap.put(SubWindowKey.CMN_INFO_MSG, InformationMessageWindow.class);
+		viewKeyToClassMap.put(ViewKey.ADMIN_APP_MOVE_SEARCH, APPMoveSearchView.class);
 
-        windowKeyToClassMap.put(SubWindowKey.SCR_LOGIN_FAILED, LoginFailedWindow.class);
+		viewKeyToClassMap.put(ViewKey.HOME_PROCESS, ProcessView.class);
+		viewKeyToClassMap.put(ViewKey.HOME_INTRODUCTION, IntroductionView.class);
+		viewKeyToClassMap.put(ViewKey.HOME_INTRODUCTION_DETAIL, IntroductionDetailView.class);
+		viewKeyToClassMap.put(ViewKey.HOME_INSTRUCTIONS, InstructionsView.class);
+		viewKeyToClassMap.put(ViewKey.HOME_CONTACT, ContactView.class);
 
-        windowKeyToClassMap.put(SubWindowKey.HOME_INTRO, IntroductionWindow.class);
-        windowKeyToClassMap.put(SubWindowKey.HOME_PROCESS, ProcessWindow.class);
-        
-        windowKeyToClassMap.put(SubWindowKey.HOME_INSTRUCTIONS, InstructionsWindow.class);
-        windowKeyToClassMap.put(SubWindowKey.HOME_CONTACT, ContactWindow.class);
-        
+		viewKeyToClassMap.put(ViewKey.TN_SEARCH, TradeNameSearchView.class);
+		viewKeyToClassMap.put(ViewKey.TN_DETAIL, TradeNameDetailView.class);
 
-        windowKeyToClassMap.put(SubWindowKey.TN_NEW, NewTradeNameWindow.class);
-        windowKeyToClassMap.put(SubWindowKey.TN_PREPARE_SUBMIT, PrepareForSubmissionWindow.class);
-        windowKeyToClassMap.put(SubWindowKey.TN_ADMIN_COMMENTS, AdminCommentsWindow.class);
-        windowKeyToClassMap.put(SubWindowKey.TN_CANCEL, CancelTNDetailWindow.class);
-        windowKeyToClassMap.put(SubWindowKey.TN_SAVE_AS, SaveAsWindow.class);
-        
-        windowKeyToClassMap.put(SubWindowKey.CMS_SAVE, CMSSaveSubWindow.class);
+		viewKeyToClassMap.put(ViewKey.TN_PAYMENT, PaymentView.class);
+		viewKeyToClassMap.put(ViewKey.TN_PAYMENT_BY_CHECK, PaymentByCheckView.class);
+		viewKeyToClassMap.put(ViewKey.TN_PAYMENT_BY_CHECK_THANK_YOU, PayByCheckThankYouView.class);
+		viewKeyToClassMap.put(ViewKey.TN_PAYMENT_BY_WIRE, PaymentByWireView.class);
+		viewKeyToClassMap.put(ViewKey.TN_PAYMENT_BY_WIRE_THANK_YOU, PayByWireThankYouView.class);
+		viewKeyToClassMap.put(ViewKey.TN_PAYMENT_BY_CC, PaymentByCCView.class);
+		viewKeyToClassMap.put(ViewKey.TN_PAYMENT_BY_CC_THANK_YOU, PayByCCThankYouView.class);
 
-        windowKeyToClassMap.put(SubWindowKey.CC_CVN_WHAT_IS, CVNWhatIsWindow.class);
-        
-        windowKeyToClassMap.put(SubWindowKey.DELETE_TRADE, DeleteTradeSubWindow.class);        
-        
-        windowKeyToClassMap.put(SubWindowKey.PRIVACY_POLICY, PrivacyPolicyWindow.class);        
-    }
+		viewKeyToClassMap.put(ViewKey.TN_ARCHIVE, TradeNameArchiveView.class);
+		viewKeyToClassMap.put(ViewKey.TN_ARCHIVE_SEARCH, TradeNameArchiveSearchView.class);
+		viewKeyToClassMap.put(ViewKey.TN_ARCHIVE_MOVE, TradeNameArchiveMoveView.class);
 
-    @Override
-    protected void showView(AbstractView view) {
-        mainLayout.getContentLayout().removeAllComponents();
-        /*
-         * TODO (LOW) refactor possibly to fit into the new ui component
-         * framework.
-         */
-        mainLayout.getContentLayout().addComponent(view.getMainComponent());
-        scrollIntoView(mainLayout.getTopLayout());
-    }
+		viewKeyToClassMap.put(ViewKey.PRIVACY_POLICY, PrivacyPolicyView.class);
+	}
 
-    public void closeLoadingSubWindow() {
-        removeWindow(subWindowsMap.get(SubWindowKey.CMN_LOADING));
-    }
+	private void initSubWindows() {
+		subWindowsMap = new HashMap<SubWindowKey, SubWindow>();
 
-    public void logon(SecurityInfo securityInfo) {
-    	try {
-	        super.logon(securityInfo);
-	
-	        mainLayout.showUserMenu();
-	
-	        mainLayout.setLoginInfo(getCurrentSecurityInfo().getUser().getUserFullName());
-	        mainLayout.setLoginDate(new Date());
-	
-	        //navigateTo(ViewKey.HOME_PROCESS.toString());
-	        navigateTo(ViewKey.TN_SEARCH.toString());
-    	}
-    	catch(Exception ex) {
-    		super.showInfoMsgWindow("MainWindow.logon exception: \n" + ex.getMessage());
-    	}    	
-    }
+		windowKeyToClassMap = new HashMap<SubWindowKey, Class<? extends SubWindow>>();
 
-    public void logout() {
-    	//getApplication().setLogoutURL(getURL().toString() + "#SCR_LOGON");
-    	setFragment(getURL().toString() + "#SCR_LOGON");
-        getApplication().close();
-    }
+		windowKeyToClassMap.put(SubWindowKey.CMN_LOADING, LoadingWindow.class);
+		windowKeyToClassMap.put(SubWindowKey.CMN_INFO_MSG, InformationMessageWindow.class);
 
-    public MainLayout getMainLayout() {
-        return mainLayout;
-    }
-    
+		windowKeyToClassMap.put(SubWindowKey.SCR_LOGIN_FAILED, LoginFailedWindow.class);
+
+		windowKeyToClassMap.put(SubWindowKey.HOME_INTRO, IntroductionWindow.class);
+		windowKeyToClassMap.put(SubWindowKey.HOME_PROCESS, ProcessWindow.class);
+
+		windowKeyToClassMap.put(SubWindowKey.HOME_INSTRUCTIONS, InstructionsWindow.class);
+		windowKeyToClassMap.put(SubWindowKey.HOME_CONTACT, ContactWindow.class);
+
+		windowKeyToClassMap.put(SubWindowKey.TN_NEW, NewTradeNameWindow.class);
+		windowKeyToClassMap.put(SubWindowKey.TN_PREPARE_SUBMIT, PrepareForSubmissionWindow.class);
+		windowKeyToClassMap.put(SubWindowKey.TN_ADMIN_COMMENTS, AdminCommentsWindow.class);
+		windowKeyToClassMap.put(SubWindowKey.TN_CANCEL, CancelTNDetailWindow.class);
+		windowKeyToClassMap.put(SubWindowKey.TN_SAVE_AS, SaveAsWindow.class);
+
+		windowKeyToClassMap.put(SubWindowKey.CMS_SAVE, CMSSaveSubWindow.class);
+
+		windowKeyToClassMap.put(SubWindowKey.CC_CVN_WHAT_IS, CVNWhatIsWindow.class);
+
+		windowKeyToClassMap.put(SubWindowKey.DELETE_TRADE, DeleteTradeSubWindow.class);
+
+		windowKeyToClassMap.put(SubWindowKey.PRIVACY_POLICY, PrivacyPolicyWindow.class);
+	}
+
+	@Override
+	protected void showView(AbstractView view) {
+		mainLayout.getContentLayout().removeAllComponents();
+		mainLayout.getContentLayout().addComponent(view.getMainComponent());
+		scrollIntoView(mainLayout.getTopLayout());
+	}
+
+	public void closeLoadingSubWindow() {
+		removeWindow(subWindowsMap.get(SubWindowKey.CMN_LOADING));
+	}
+
+	public void logon(SecurityInfo securityInfo) {
+		try {
+			super.logon(securityInfo);
+
+			mainLayout.showUserMenu();
+
+			mainLayout.setLoginInfo(getCurrentSecurityInfo().getUser().getUserFullName());
+			mainLayout.setLoginDate(new Date());
+
+			// navigateTo(ViewKey.HOME_PROCESS.toString());
+			navigateTo(ViewKey.TN_SEARCH.toString());
+		} catch (Exception ex) {
+			super.showInfoMsgWindow("MainWindow.logon exception: \n" + ex.getMessage());
+		}
+	}
+
+	public void logout() {
+		// getApplication().setLogoutURL(getURL().toString() + "#SCR_LOGON");
+		setFragment(getURL().toString() + "#SCR_LOGON");
+		getApplication().close();
+	}
+
+	public MainLayout getMainLayout() {
+		return mainLayout;
+	}
+
 }
